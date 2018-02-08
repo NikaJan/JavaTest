@@ -6,22 +6,22 @@ import java.util.Scanner;
 public class CreateMyOwnParse {
 
     public static void main(String[] args){
-        parseInt("543210");
+        System.out.println((parseInt("5478")));
+        System.out.println((Integer.parseInt("5478")));
+        System.out.println((parseInt("5478")) == Integer.parseInt("5478"));
     }
 
     public static int parseInt(String s){
-        int parsedValue = 0;
-            if((s != null)&&(!s.equals(""))&&(s.length()<=7)){
-                for(int i = 1; i <= s.length(); ++i){
-                    int counter = (int)Math.pow(1,i);
-                    i=i*10;
-                    System.out.println(counter);
+        int res = 0;
+        int n = s.length();
+        int k = 1;
 
-                    //System.out.println(s.charAt(4));
-                    //System.out.println(s.length());
-                }
-            }
-        return parsedValue;
+        for(int i = 0; i < n; ++i){
+            res = res + (s.charAt(n-1-i)-'0')*k;
+            k=k*10;
+        }
+
+        return res;
     }
 
 }
